@@ -86,9 +86,12 @@ const App = () => {
 
   const onCancel = () => {
     setProduct(defaultProductObj);
+    closeModal();
+  };
+  const onCancelEdit = () => {
+    setProduct(defaultProductObj);
     closeEditModal();
   };
-
   const removeProductHandler = () => {
     const filtered = products.filter(
       (product) => product.id !== productToEdit.id
@@ -359,7 +362,7 @@ const App = () => {
             <Button
               type="button"
               className="bg-[#f5f5fa] hover:bg-gray-300 !text-black"
-              onClick={onCancel}
+              onClick={onCancelEdit}
             >
               Cancel
             </Button>
